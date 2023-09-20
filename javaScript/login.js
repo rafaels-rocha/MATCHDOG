@@ -6,25 +6,26 @@ function logar(){
         nomes:nomes,
         senha:senha
     }));
-    fetch('login',{
+    fetch('/login',{
         method: 'POST',
         body: JSON.stringify({
             nomes:nomes,
             senha:senha
         }),
-        headers: {"content-type": "application/json"}
+        headers: {"Content-Type" : "application/json"}
     })
 
     .then(async (resp) => {
         var status = await resp.text();
         console.log(status)
-        if (status == 'success'){
-            location.href = '/acesso/principal.html"'
-        }else{
-            alert('Nome ou senha inválidos!')
+        if(status == 'conectado' ){
+            location.href = '/acesso/principal.html'
+        }else {
+            alert('Nome e senha inválidos!!')
         }
         
-    })
+    });
+
 
 }
 
