@@ -63,7 +63,7 @@ body{
     
 }
 
-#icon i {
+#icon .icon {
     position: absolute;
 }
   
@@ -79,10 +79,12 @@ body{
     color: rgba(0, 0, 0, 0.2);
     
 }
+
+
   
 #login{
     background-color: rgba(255, 255, 255, 0.80);
-    color: rgba(0, 0, 0, 0.2);;
+    color: rgba(0, 0, 0, 0.2);
     font-size: 16px;
     border-radius: 20px;
 }
@@ -96,4 +98,13 @@ body{
 #login:hover{
     background-color:  rgba(255, 255, 255, 0.20);
     
+}
+
+#registro a{
+    color:rgba(0, 0, 0, 0.5); ;
+    text-decoration: none;
+}
+
+#registro a:hover{
+    color:rgba(255, 255, 255, 0.40) ;
 }
