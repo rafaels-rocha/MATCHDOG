@@ -56,3 +56,30 @@ app.post('/login' ,(req,res) => {
     }
     res.send('falhou')
 })
+
+//area de cadastro
+
+app.post('/cadastro' ,(req,res) => {
+    const usuarioscad = fs.readFileSync('./usuarios.json')
+    const usuariosparse = JSON.parse(usuarioscad)
+
+        var nomescad = req.body.nomescad
+        var senhacad = req.body.senhacad
+
+        const datauser = {
+            nome: nomescad,
+            senha: senhacad
+        }
+
+        usuariosparse.push(datauser)
+
+        fs.writeFile('./usuarios.json', JSON.stringify(usuariosparse, null, 4), (error, result) => {
+            if (error) {
+                console.error(error)
+                return
+            }
+            console.log(result)
+        })
+})
+
+
